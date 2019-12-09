@@ -14,6 +14,9 @@
     <div class="col-12 col-md-4">
       <h4 class="text-center">Add a plant</h4>
       <%= simple_form_for [ @garden, @plant ] do |f| %>
+        <%= f.error_notification %>
+        <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+
         <%= f.input :name, placeholder: "Palm tree" %>
         <%= f.input :image_url, placeholder: "https://some_nice_image_found_on_google.jpg" %>
         <div class="form-actions">

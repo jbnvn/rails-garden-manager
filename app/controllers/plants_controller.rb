@@ -6,7 +6,7 @@ class PlantsController < ApplicationController
     if @plant.save
       redirect_to garden_path(@garden)
     else
-      render 'gardens/show'
+      redirect_to garden_path(@garden)
     end
   end
 
